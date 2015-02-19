@@ -580,8 +580,8 @@ impl WorkerThread {
                               Color { r: 255.0/255.0, g: 249.0/255.0, b: 201.0/255.0, a: 0.7 },
                               Color { r: 137.0/255.0, g: 196.0/255.0, b: 78.0/255.0, a: 0.7 }];
                 paint_context.draw_solid_color(&Rect(Point2D(Au(0), Au(0)),
-                                                     Size2D(Au(size.width * 60),
-                                                            Au(size.height * 60))),
+                                                     Size2D(Au::from_px(size.width as isize),
+                                                            Au::from_px(size.height as isize))),
                                                colors[thread_id % colors.len()]);
             }
         }
